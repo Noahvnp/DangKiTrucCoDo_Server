@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/user');
+const registeredUserRoute = require("./routes/registeredUser");
 
 dotenv.config();
 const app = express();
@@ -21,11 +22,10 @@ mongoose
     .then(() => console.log('Connected to database'))
     .catch((err) => console.error(err));
 
-
-
 // Route
 app.use("/v1/auth", authRoute);
 app.use("/v1/user", userRoute);
+app.use("/v1/register", registeredUserRoute);
 
 app.listen(8000, () => {
     console.log("server listening on http://localhost:8000");

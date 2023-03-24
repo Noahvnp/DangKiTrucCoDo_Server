@@ -26,7 +26,8 @@ const middlewareController = {
 
     verifyTokenAndAdminAuth: (req, res, next) => {
         middlewareController.verifyToken(req, res, ()=>{
-                if(req.user.id == req.params.id || req.user.admin) {
+                console.log(req.user);
+                if(req.user.id === req.params.id || (req.user.id === req.params.iduser && req.params.id)|| req.user.admin) {
                     next();
                 }
                 else {
