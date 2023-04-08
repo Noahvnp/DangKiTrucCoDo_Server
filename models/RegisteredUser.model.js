@@ -26,6 +26,10 @@ const registeredUserSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    week: {
+        type: Number,
+        required: true,
+    },
     shift: {
         type: String,
         required: true,
@@ -33,6 +37,10 @@ const registeredUserSchema = new mongoose.Schema({
     attendance: {
         type: Boolean,
         default : false,
+    },
+    organization_in_charge: {
+        type: String,
+        default: null
     }
 }, {timestamps: true}
 );

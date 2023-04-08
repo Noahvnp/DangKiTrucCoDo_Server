@@ -10,8 +10,10 @@ const registeredUserController = {
                 email: req.body.email,
                 mssv: req.body.mssv,
                 register_date: req.body.register_date,
+                week: req.body.week,
                 shift: req.body.shift,
                 attendance: req.body.attendance,
+                organization_in_charge: req.body.organization_in_charge,
             });
 
             const registeredUser = await newRegisteredUser.save();
