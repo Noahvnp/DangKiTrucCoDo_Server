@@ -63,7 +63,7 @@ const authController =  {
     logoutUser: async (req, res) => {
         res.clearCookie("refreshToken");
         refreshTokens = refreshTokens.filter(token => token !== req.cookies.refreshToken);
-        res.status(200).json("Logged out successfully");
+        return res.status(200).json("Logged out successfully");
     },
 
     // GENERATE ACCESS TOKEN
@@ -74,7 +74,7 @@ const authController =  {
                 admin: user.admin,
             },
             process.env.JWT_ACCESS_KEY,
-            {expiresIn: "30s"}
+            {expiresIn: "300s"}
         );
     },
 

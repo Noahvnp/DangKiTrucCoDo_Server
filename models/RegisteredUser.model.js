@@ -24,15 +24,14 @@ const registeredUserSchema = new mongoose.Schema({
     },
     register_date: {
         type: Date,
-        required: true,
+        // required: true,
     },
     week: {
         type: Number,
-        required: true,
     },
     shift: {
         type: String,
-        required: true,
+        // required: true,
     },
     attendance: {
         type: Boolean,
