@@ -23,7 +23,7 @@ const registeredUserSchema = new mongoose.Schema({
         minlength: 8,
     },
     register_date: {
-        type: Date,
+        type: String,
         // required: true,
     },
     week: {

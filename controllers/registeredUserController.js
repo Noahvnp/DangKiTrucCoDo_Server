@@ -1,3 +1,4 @@
+// const { logOut } = require("../../frontend/src/redux/apiRequest");
 const RegisteredUser = require("../models/RegisteredUser.model");
 
 const registeredUserController = {
@@ -34,12 +35,12 @@ const registeredUserController = {
     // Cap nhat user dang ki truc co do
     updateRegisteredUser: async (req, res) => {
         try {
-            console.log(req.params.iduser);
             console.log(req.params.id);
             console.log(req.body);
-            const registeredUser = await RegisteredUser.findOneAndUpdate(req.params.id, req.body);
+            const registeredUser = await RegisteredUser.findByIdAndUpdate(req.params.id, req.body);
             res.status(200).json(registeredUser);
         } catch (err) {
+            console.log(err);
             res.status(500).json(err);
         }
     },
