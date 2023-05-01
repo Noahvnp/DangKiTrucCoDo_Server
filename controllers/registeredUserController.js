@@ -49,7 +49,7 @@ const registeredUserController = {
         try {
             console.log(req.params.id);
             console.log(req.body);
-            const registeredUser = await RegisteredUser.findOneAndDelete(req.params.id);
+            const registeredUser = await RegisteredUser.findByIdAndDelete(req.params.id);
             res.status(200).json(registeredUser);
         } catch (err) {
             res.status(500).json(err);
